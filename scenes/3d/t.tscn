@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b58v7lb831bxe"]
+
+[ext_resource type="Script" path="res://scenes/3d/t.gd" id="1_cw3j4"]
+[ext_resource type="Texture2D" uid="uid://bi4viqfrhvnv3" path="res://icon.svg" id="2_qq4w4"]
+[ext_resource type="Texture2D" uid="uid://clxhb4o3ptflk" path="res://fire in the hole.jpg" id="3_8cryl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk2bg"]
+shading_mode = 0
+albedo_texture = ExtResource("2_qq4w4")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5iunn"]
+material = SubResource("StandardMaterial3D_jk2bg")
+size = Vector2(16, 9)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6nmmx"]
+panorama = ExtResource("3_8cryl")
+
+[sub_resource type="Sky" id="Sky_hx7d5"]
+sky_material = SubResource("PanoramaSkyMaterial_6nmmx")
+radiance_size = 0
+
+[sub_resource type="Environment" id="Environment_7um0w"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("Sky_hx7d5")
+sky_custom_fov = 65.0
+glow_enabled = true
+glow_intensity = 2.0
+glow_strength = 0.78
+glow_bloom = 1.0
+glow_blend_mode = 0
+glow_hdr_threshold = 0.37
+
+[node name="T" type="Node3D"]
+script = ExtResource("1_cw3j4")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1280, 720)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_5iunn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
+projection = 1
+current = true
+size = 16.0
+near = 0.001
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7um0w")

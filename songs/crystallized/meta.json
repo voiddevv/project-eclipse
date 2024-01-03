@@ -1,0 +1,29 @@
+{
+	"name": "Crystallized",
+	"artist": "Original: Camellia\nVocals: tictacto",
+	"week": 2,
+	"difficulties": [
+		{
+			"name": "easy",
+			"chart": "crystallized-easy",
+			"charter": "Brownie",
+			"displayName": "Normal"
+		},
+		{
+			"name": "normal",
+			"chart": "crystallized",
+			"charter": "Polarin, Fox",
+			"displayName": "Hard"
+		},
+		{
+			"name": "hard",
+			"chart": "crystallized-hard",
+			"charter": "Ragi, Brownie, Jian Awesome",
+			"displayName": "Maniac"
+		}
+	],
+	"initDifficulty": "normal",
+	"icon": "camellia",
+	"background": "bgDesat",
+	"colors": [ "0xFFFFFFFF" ]
+}
