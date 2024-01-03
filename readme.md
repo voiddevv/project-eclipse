@@ -1,2 +1,2 @@
-#Project-Eclipse
-##please submit all bugs to the issues tab in github
+# Project-Eclipse
+## Please submit all bugs to the issues tab in github
