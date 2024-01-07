@@ -1,14 +1,22 @@
 extends Node2D
 
-var chart:Chart
+var chart:Chart = Chart.new()
 var bpm_index:int = 0
-@onready var strums = $"HUD Layer/HUD/strums"
-@onready var tracks = $tracks
+# for every zoom_beat the hud zooms
+var zoom_beat:int = 4
+# how much to scale the zoom per zoom_beat
+var zoom_amount:Vector2 = Vector2(0.05,0.05)
+@onready var strums:Node2D = $"HUD Layer/HUD/strums"
+@onready var tracks:Node = $tracks
+@onready var hud_layer:CanvasLayer = $"HUD Layer"
+@onready var hud:Control = $"HUD Layer/HUD"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Conductor.bar_hit.connect(bar_hit)
-	chart = Chart.load_chart("crystallized","hard.json")
+	Conductor.beat_hit.connect(beat_hit)
+	chart = Chart.load_chart("bopeebo","hard.json")
 	Conductor.bpm = chart.initial_bpm
 	load_tracks()
 func load_tracks():
@@ -27,7 +35,6 @@ func load_tracks():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	Conductor.time += delta
 	
 func check_bpm_chnage():
@@ -36,8 +43,13 @@ func check_bpm_chnage():
 		if Conductor.time >= k:
 			bpm_index += 1
 			Conductor.bpm = chart.bpms.get(k)
-			print("BPM CHANGE")
+
 func _physics_process(delta):
 	check_bpm_chnage()
+	hud.scale = lerp(hud.scale,Vector2.ONE,delta*5.0)
 func bar_hit(bar:int):
+	pass
+func beat_hit(beat:int):
+	if beat %zoom_beat == 0:
+		hud.scale += zoom_amount
 	pass

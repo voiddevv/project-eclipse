@@ -13,7 +13,6 @@ config_version=5
 config/name="project eclipse"
 run/main_scene="res://scenes/2d/gameplay/playfield.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-run/low_processor_mode=true
 config/icon="res://icon.svg"
 
 [autoload]
@@ -27,6 +26,7 @@ Save="*res://autoload/Save.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/transparent=true
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
@@ -68,4 +68,5 @@ common/physics_jitter_fix=0.0
 [rendering]
 
 renderer/rendering_method="mobile"
+viewport/transparent_background=true
 viewport/hdr_2d=true

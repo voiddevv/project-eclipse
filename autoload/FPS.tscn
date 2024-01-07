@@ -7,14 +7,11 @@ font_size = 24
 outline_size = 12
 outline_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
-[node name="Fps" type="Node2D"]
+[node name="Fps" type="CanvasLayer"]
 script = ExtResource("1_n3fxt")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 128
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="."]
+offset_right = 76.0
+offset_bottom = 34.0
 text = "FPS:60"
 label_settings = SubResource("LabelSettings_s6jlv")

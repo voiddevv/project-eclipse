@@ -9,6 +9,9 @@ class_name Chart extends Resource
 @export var bpms:Dictionary = {}
 @export var initial_bpm:float = 100.0
 
+func save(path:String):
+	ResourceSaver.save(self)
+
 static func load_chart(song:String,diff:String):
 	const BASE_SONG_PATH = "res://songs"
 	var path:String = "%s/%s/%s"%[BASE_SONG_PATH, song, diff]
@@ -39,8 +42,10 @@ static func load_chart(song:String,diff:String):
 					var _note_data:NoteData = NoteData.new()
 					_note_data.hit_time = float(note_data[0])*0.001
 					
-					_note_data.direction = (int(note_data[1]) + (4 if section.mustHitSection else 0))%8
-					_note_data.sustain_length = float(note_data[2])*0.001
+					_note_data.direction = int(note_data[1])
+					_note_data.sustain_length = maxf(float(note_data[2])*0.001,0.0)
+					_note_data.strum_id = int(section.mustHitSection) or _note_data.direction >= 4
+					print(_note_data)
 					new_chart.notes.append(_note_data)
 		"res","tres":
 			new_chart = load(path)

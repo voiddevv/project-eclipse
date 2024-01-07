@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scenes/2d/gameplay/playfield.gd" id="1_bnrmf"]
 [ext_resource type="PackedScene" uid="uid://dlyetqmb5a4gd" path="res://scenes/2d/gameplay/strums/4K.tscn" id="2_88de2"]
-[ext_resource type="Texture2D" uid="uid://dqvfwwrt0tofy" path="res://pattern.svg" id="5_m5hqv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uhdn5"]
 
@@ -19,6 +18,8 @@ border_width_top = 4
 border_width_right = 12
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qfxt8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_bnrmf")
@@ -69,11 +70,8 @@ show_percentage = false
 position = Vector2(360, 620)
 
 [node name="player strum" parent="HUD Layer/HUD/strums" instance=ExtResource("2_88de2")]
+material = SubResource("CanvasItemMaterial_qfxt8")
 position = Vector2(960, 620)
 handle_input = true
 
 [node name="tracks" type="Node" parent="."]
-
-[node name="Pattern" type="Sprite2D" parent="."]
-position = Vector2(342, 300)
-texture = ExtResource("5_m5hqv")
