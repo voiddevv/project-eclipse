@@ -3,15 +3,17 @@
 [ext_resource type="Script" path="res://autoload/FPS.gd" id="1_n3fxt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s6jlv"]
-font_size = 24
+font_size = 12
 outline_size = 12
 outline_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 
-[node name="Fps" type="CanvasLayer"]
+[node name="FPS" type="CanvasLayer"]
 script = ExtResource("1_n3fxt")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 76.0
-offset_bottom = 34.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 84.0
+offset_bottom = 42.0
 text = "FPS:60"
 label_settings = SubResource("LabelSettings_s6jlv")

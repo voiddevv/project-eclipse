@@ -17,7 +17,7 @@ static func load_chart(song:String,diff:String):
 	var path:String = "%s/%s/%s"%[BASE_SONG_PATH, song, diff]
 	var exist:bool = ResourceLoader.exists(path)
 	if exist:
-		print("%s Found Parseing"%path)
+		print("%s Found Parsing"%path)
 	else:
 		print("%s Not Found"%path)
 		return null
@@ -45,7 +45,6 @@ static func load_chart(song:String,diff:String):
 					_note_data.direction = int(note_data[1])
 					_note_data.sustain_length = maxf(float(note_data[2])*0.001,0.0)
 					_note_data.strum_id = int(section.mustHitSection) or _note_data.direction >= 4
-					print(_note_data)
 					new_chart.notes.append(_note_data)
 		"res","tres":
 			new_chart = load(path)

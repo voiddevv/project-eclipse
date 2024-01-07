@@ -5,7 +5,7 @@ var bpm_index:int = 0
 # for every zoom_beat the hud zooms
 var zoom_beat:int = 4
 # how much to scale the zoom per zoom_beat
-var zoom_amount:Vector2 = Vector2(0.05,0.05)
+var zoom_amount:Vector2 = Vector2(0.03, 0.03)
 @onready var strums:Node2D = $"HUD Layer/HUD/strums"
 @onready var tracks:Node = $tracks
 @onready var hud_layer:CanvasLayer = $"HUD Layer"
@@ -20,7 +20,7 @@ func _ready():
 	Conductor.bpm = chart.initial_bpm
 	load_tracks()
 func load_tracks():
-	var song_path:String = "res://songs/%s/tracks/" %chart.song_name
+	var song_path:String = "res://songs/%s/tracks/" %chart.song_name.to_lower()
 	
 	var files:PackedStringArray = DirAccess.get_files_at(song_path)
 	for file in files:
@@ -30,7 +30,9 @@ func load_tracks():
 			var player:AudioStreamPlayer = AudioStreamPlayer.new()
 			player.stream = stream
 			tracks.add_child(player)
-			player.play()
+	
+	for player in tracks.get_children():
+		player.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
