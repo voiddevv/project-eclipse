@@ -1,0 +1,18 @@
+[remap]
+
+importer="com.what-is-a-git.godot-sparrow-importer"
+type="SpriteFrames"
+uid="uid://cnwas7uds7dmm"
+path="res://.godot/imported/strums.xml-84a95744daebc2eac66e67d87280349d.res"
+
+[deps]
+
+source_file="res://note skins/strums.xml"
+dest_files=["res://.godot/imported/strums.xml-84a95744daebc2eac66e67d87280349d.res"]
+
+[params]
+
+use_offsets=true
+animation_framerate=24
+animations_looped=false
+store_external_spriteframes=true

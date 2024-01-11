@@ -1,0 +1,18 @@
+[remap]
+
+importer="com.what-is-a-git.godot-sparrow-importer"
+type="SpriteFrames"
+uid="uid://rblnblmgfodn"
+path="res://.godot/imported/big mario.xml-f79058944f953fd2d184215d3f2094f6.res"
+
+[deps]
+
+source_file="res://note skins/big mario.xml"
+dest_files=["res://.godot/imported/big mario.xml-f79058944f953fd2d184215d3f2094f6.res"]
+
+[params]
+
+use_offsets=true
+animation_framerate=24
+animations_looped=false
+store_external_spriteframes=false

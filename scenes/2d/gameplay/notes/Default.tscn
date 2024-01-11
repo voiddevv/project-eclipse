@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://1q6jok5fxwy1"]
+
+[ext_resource type="Script" path="res://scenes/2d/gameplay/notes/Note.gd" id="1_t6anp"]
+[ext_resource type="Shader" path="res://scenes/2d/gameplay/note shader.gdshader" id="2_0iuha"]
+[ext_resource type="SpriteFrames" uid="uid://cefmt4jqn8bc0" path="res://note skins/funkin/notes.res" id="2_3wp50"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_755ea"]
+shader = ExtResource("2_0iuha")
+shader_parameter/RED = Color(1, 0, 0, 1)
+shader_parameter/GREEN = Color(1, 1, 1, 1)
+shader_parameter/BLUE = null
+shader_parameter/enable = true
+
+[node name="Default" type="Node2D"]
+script = ExtResource("1_t6anp")
+support_custom_color = true
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_755ea")
+scale = Vector2(0.7, 0.7)
+sprite_frames = ExtResource("2_3wp50")
+animation = &"note"

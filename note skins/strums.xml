@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="strums.png">
+	<!-- Created with Adobe Animate version 24.0.0.305 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="arrowUP0000" x="204" y="241" width="146" height="162"/>
+	<SubTexture name="up confirm0000" x="0" y="0" width="223" height="241"/>
+	<SubTexture name="up confirm0001" x="223" y="0" width="223" height="241"/>
+	<SubTexture name="up confirm0002" x="0" y="241" width="204" height="219" frameX="-10" frameY="-11" frameWidth="223" frameHeight="241"/>
+	<SubTexture name="up confirm0003" x="0" y="241" width="204" height="219" frameX="-10" frameY="-11" frameWidth="223" frameHeight="241"/>
+	<SubTexture name="up press0000" x="446" y="0" width="133" height="146" frameX="-2" frameY="-3" frameWidth="138" frameHeight="152"/>
+	<SubTexture name="up press0001" x="446" y="0" width="133" height="146" frameX="-2" frameY="-3" frameWidth="138" frameHeight="152"/>
+	<SubTexture name="up press0002" x="350" y="241" width="138" height="152"/>
+	<SubTexture name="up press0003" x="350" y="241" width="138" height="152"/>
+</TextureAtlas>

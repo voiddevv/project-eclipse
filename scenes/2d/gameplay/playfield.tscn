@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dku6dw7xr827t"]
+[gd_scene load_steps=6 format=3 uid="uid://dku6dw7xr827t"]
 
 [ext_resource type="Script" path="res://scenes/2d/gameplay/playfield.gd" id="1_bnrmf"]
 [ext_resource type="PackedScene" uid="uid://dlyetqmb5a4gd" path="res://scenes/2d/gameplay/strums/4K.tscn" id="2_88de2"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhdn5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m01a1"]
 bg_color = Color(1, 0, 0, 1)
@@ -11,6 +9,11 @@ border_width_left = 12
 border_width_top = 4
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgxus"]
 bg_color = Color(0, 1, 0, 1)
@@ -18,6 +21,9 @@ border_width_top = 4
 border_width_right = 12
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+anti_aliasing = false
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qfxt8"]
 
@@ -43,7 +49,6 @@ pivot_offset = Vector2(640, 360)
 metadata/_edit_lock_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="HUD Layer/HUD"]
-material = SubResource("ShaderMaterial_uhdn5")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -67,6 +72,7 @@ show_percentage = false
 [node name="strums" type="Node2D" parent="HUD Layer/HUD"]
 
 [node name="cpu strum" parent="HUD Layer/HUD/strums" instance=ExtResource("2_88de2")]
+texture_filter = 4
 position = Vector2(360, 620)
 
 [node name="player strum" parent="HUD Layer/HUD/strums" instance=ExtResource("2_88de2")]
