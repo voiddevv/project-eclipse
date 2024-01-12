@@ -2,7 +2,7 @@
 <TextureAtlas imagePath="notes.png">
 	<!-- Created with Adobe Animate version 24.0.0.305 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="green hold end instance 10000" x="160" y="0" width="51" height="65"/>
-	<SubTexture name="green hold piece instance 10000" x="160" y="68" width="51" height="44"/>
-	<SubTexture name="green instance 10000" x="0" y="0" width="157" height="155"/>
+	<SubTexture name="tail 0000" x="160" y="0" width="51" height="65"/>
+	<SubTexture name="hold 0000" x="160" y="68" width="51" height="44"/>
+	<SubTexture name="note 0000" x="0" y="0" width="157" height="155"/>
 </TextureAtlas>

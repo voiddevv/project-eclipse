@@ -66,7 +66,6 @@ func spawn_notes():
 		if _note.data.hit_time - Conductor.time >= 1.5: break
 		var note_strum_id:int = _note.data.strum_id
 		var strum_count:int = strums.get_child_count()
-		if note_strum_id >= strum_count: push_warning("NOTE_STRUM_ID EXCEEDS NUMBER OF STRUMLINES")
 		_note.strum = strums.get_child(note_strum_id%strum_count)
 		_note.strum.note_group.add_child(_note)
 		note_index += 1

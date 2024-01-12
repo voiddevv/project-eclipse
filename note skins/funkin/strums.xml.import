@@ -15,4 +15,4 @@ dest_files=["res://.godot/imported/strums.xml-ac83cf6657e21d94ad82f2bd8b2d561d.r
 use_offsets=true
 animation_framerate=24
 animations_looped=false
-store_external_spriteframes=true
+store_external_spriteframes=false
