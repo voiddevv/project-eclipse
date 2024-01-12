@@ -9,6 +9,8 @@ func check_settings() -> void:
 	Save.load()
 	Engine.max_fps = Save.get_data("graphics","fps",240)
 	DisplayServer.window_set_vsync_mode(Save.get_data("graphics","vsync_mode",0))
+	main_window.size *= Save.get_data("graphics","window_scale",1.0)
+	main_window.move_to_center()
 
 	
 func _ready():

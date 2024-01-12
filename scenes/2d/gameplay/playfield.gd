@@ -58,7 +58,6 @@ func _physics_process(delta):
 		if _t - Conductor.time >= 0.015:
 			Conductor.time = _t
 			i.seek(_t)
-		print(_t - Conductor.time)
 	call_deferred(&"spawn_notes")
 func bar_hit(bar:int):
 	pass

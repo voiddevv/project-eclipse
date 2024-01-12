@@ -33,9 +33,11 @@ func update_notes():
 		if override_position.y != 0: note.position.y = override_position.y
 		if Conductor.time - note.data.hit_time >= 0 and not strumline.handle_input:
 			receptor.play("confirm")
+			receptor.material.set_shader_parameter("enable",true)
 			note.visible = false
-			if not receptor.animation_finished.is_connected(receptor.play.bind("static")):
-				receptor.animation_finished.connect(receptor.play.bind("static"),CONNECT_ONE_SHOT)
+			receptor.animation_finished.connect(func(): 
+				receptor.play("static")
+				receptor.material.set_shader_parameter("enable",false),CONNECT_ONE_SHOT)
 			note.queue_free()
 			continue
 		if note.too_late:
