@@ -14,5 +14,5 @@ dest_files=["res://.godot/imported/Ultra_M1_Assets.xml-abf5ebc8c5105cbda0843fee4
 
 use_offsets=true
 animation_framerate=24
-animations_looped=false
+animations_looped=true
 store_external_spriteframes=false

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfr5pn2fq0pwf"
-path.bptc="res://.godot/imported/Ultra_M1_Assets.png-aec009ccf1242165685f5dd0d41bdb20.bptc.ctex"
+path="res://.godot/imported/Ultra_M1_Assets.png-aec009ccf1242165685f5dd0d41bdb20.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://images/Ultra_M1_Assets.png"
-dest_files=["res://.godot/imported/Ultra_M1_Assets.png-aec009ccf1242165685f5dd0d41bdb20.bptc.ctex"]
+dest_files=["res://.godot/imported/Ultra_M1_Assets.png-aec009ccf1242165685f5dd0d41bdb20.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
