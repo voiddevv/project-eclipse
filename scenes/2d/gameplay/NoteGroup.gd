@@ -34,7 +34,8 @@ func update_notes():
 		if Conductor.time - note.data.hit_time >= 0 and not strumline.handle_input:
 			receptor.play("confirm")
 			note.visible = false
-			receptor.animation_finished.connect(receptor.play.bind("static"),CONNECT_ONE_SHOT)
+			if not receptor.animation_finished.is_connected(receptor.play.bind("static")):
+				receptor.animation_finished.connect(receptor.play.bind("static"),CONNECT_ONE_SHOT)
 			note.queue_free()
 			continue
 		if note.too_late:
