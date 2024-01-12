@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dku6dw7xr827t"]
-
-[ext_resource type="Script" path="res://scenes/2d/playfield.gd" id="1_bnrmf"]
-
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_bnrmf")

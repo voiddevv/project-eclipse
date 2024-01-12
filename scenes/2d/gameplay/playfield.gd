@@ -53,7 +53,13 @@ func check_bpm_chnage():
 func _physics_process(delta):
 	check_bpm_chnage()
 	hud.scale = lerp(hud.scale,Vector2.ONE,delta*5.0)
-	spawn_notes()
+	for i:AudioStreamPlayer in tracks.get_children():
+		var _t:float = i.get_playback_position() + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
+		if _t - Conductor.time >= 0.015:
+			Conductor.time = _t
+			i.seek(_t)
+		print(_t - Conductor.time)
+	call_deferred(&"spawn_notes")
 func bar_hit(bar:int):
 	pass
 	
