@@ -2,6 +2,7 @@ class_name StrumLine extends Node2D
 @export var handle_input:bool = false
 @onready var receptors = $receptors
 @onready var note_group:NoteGroup = $NoteGroup
+@onready var playfield:PlayField = $"../../../.."
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.use_accumulated_input = false
@@ -32,7 +33,8 @@ func _unhandled_input(event):
 		notes.sort_custom(func(a:Note,b:Note): return a.data.hit_time < b.data.hit_time)
 		if notes.is_empty(): return
 		receptor.play("confirm")
-		notes[0].queue_free()
+		playfield.call_deferred("player_note_hit",notes[0])
+		
 
 	if not event.pressed and pressed[dir]:
 		var receptor:Receptor = receptors.get_child(dir)

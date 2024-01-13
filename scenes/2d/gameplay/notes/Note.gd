@@ -5,6 +5,7 @@ class_name Note extends Node2D
 var data:NoteData
 ## strum is set on spawn of note
 var strum:StrumLine
+var override_position:Vector2 = Vector2.INF
 
 var step:float = 0:
 	get:
